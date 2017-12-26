@@ -6,6 +6,9 @@ all: build release
 build: deps
 	go build
 
+rebuild: deps
+	go build -a -v -race ./...
+
 release: clean deps
 	@for arch in $(ARCHS);\
 	do \
